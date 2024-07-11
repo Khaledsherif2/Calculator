@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./calculator-icon.png">
+</head>
+<body>
+  <div class="calc">
+    <div class="container">
+      <div class="header">
+        <div class="title">
+          <h1>Calculator</h1>
+        </div>
+        <div class="theme">
+          <div class="mode-title">Theme</div>
+          <div class="mode">
+            <input type="radio" id="one" name="switch" checked>
+            <label for="one" class="switch-label"></label>
+            <input type="radio" id="two" name="switch">
+            <label for="two" class="switch-label"></label>
+            <input type="radio" id="three" name="switch">
+            <label for="three" class="switch-label"></label>
+          </div>
+        </div>
+      </div>
+      <div class="screen">
+        <form name="form">
+          <input type="text" name="text" id="text" readonly>
+        </form>
+      </div>
+      <div class="panel">
+        <div onclick="update(this)">7</div>
+        <div onclick="update(this)">8</div>
+        <div onclick="update(this)">9</div>
+        <div id="del" onclick="del()">del</div>
+        <div onclick="update(this)">4</div>
+        <div onclick="update(this)">5</div>
+        <div onclick="update(this)">6</div>
+        <div onclick="update(this)">+</div>
+        <div onclick="update(this)">1</div>
+        <div onclick="update(this)">2</div>
+        <div onclick="update(this)">3</div>
+        <div onclick="update(this)">-</div>
+        <div onclick="update(this)">.</div>
+        <div onclick="update(this)">0</div>
+        <div onclick="update(this)">÷</div>
+        <div onclick="update(this)">×</div>
+        <div onclick="reset()">reset</div>
+        <div onclick="calc()">=</div>
+      </div>
+    </div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>
