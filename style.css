@@ -1,0 +1,171 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --main-color: #394764;
+  --secondary-color: #242b45;
+  --delbtn-color: #647299;
+  --delbtn-shadow-color: #414e71;
+  --char-color: #fff;
+  --equalbtn-color: #d13f30;
+  --equalbtn-shadow-color: #8f2316;
+  --num-bg-color: #eae3db;
+  --num-color: #474e60;
+  --num-shadow-color: #999;
+}
+body {
+  background-color: #242526;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.light-teme {
+  --main-color: #eee;
+  --secondary-color: #d3cdcd7d;
+  --btn-color: #388187;
+  --btn-shadow-color: #1a5d66;
+  --char-color: #373830;
+  --equalbtn-color: #d13f30;
+  --equalbtn-shadow-color: #8f2316;
+  --num-bg-color: #eae3db;
+  --num-color: #373830;
+  --num-shadow-color: #999;
+}
+.contrast-teme {
+  --main-color: #17062a;
+  --secondary-color: #1e0836;
+  --btn-color: #56077c;
+  --btn-shadow-color: #bf15f4;
+  --char-color: #fee042;
+  --equalbtn-color: #00decf;
+  --equalbtn-shadow-color: #6cf8ef;
+  --num-bg-color: #331b4d;
+  --num-color: #fee042;
+  --num-shadow-color: #77248e;
+}
+.container {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.calc {
+  margin-top: 100px;
+  filter: drop-shadow(10px 10px 15px var(--secondary-color));
+}
+.calc .container {
+  background-color: var(--main-color);
+  color: var(--char-color);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 400px;
+  border-radius: 8px;
+}
+@media screen and (max-width: 540px) {
+  .calc .container {
+    max-width: 375px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.calc .container .header {
+  width: calc(100% - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+}
+.calc .container .header .theme {
+  display: flex;
+  align-items: center;
+}
+.calc .container .header .theme .mode-title {
+  padding-right: 15px;
+}
+.calc .container .header .theme .mode {
+  width: 80px;
+  height: 30px;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  padding-top: 6px;
+  position: relative
+}
+.calc .container .header .theme .mode::before {
+  padding: 0 5px;
+  content: "1 2 3";
+  position: absolute;
+  top: -20px;
+  word-spacing: 10px;
+  margin-left: 5px;
+}
+input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+  display: block;
+}
+label {
+  margin: 3px;
+  display: inline;
+  cursor: pointer;
+  padding: 1px 10px;
+  border-radius: 50%;
+}
+input[type=radio]:checked + label {
+  background-color: var(--equalbtn-color);
+}
+.calc .container .screen form > input {
+  width: 340px;
+  height: 90px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 35px;
+  background-color: var(--secondary-color);
+  color: var(--char-color);
+  padding: 10px;
+}
+.calc .container .panel {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.calc .container .panel > div {
+  background-color: var(--num-bg-color);
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  padding: 8px;
+  font-size: 30px;
+  color: var(--num-color);
+  box-shadow: 0 5px var(--num-shadow-color);
+  cursor: pointer;
+  transition: transform 0.1s;
+  user-select: none;
+  margin: 5px;
+  flex: 1 1 calc((100% - 53px) / 4);
+}
+.calc .container .panel > div:active {
+  transform: translateY(5px);
+}
+.calc .container .panel > div:last-of-type {
+  background-color: var(--equalbtn-color);
+  box-shadow: 0 5px var(--equalbtn-shadow-color);
+  color: var(--char-color);
+}
+.calc .container .panel > div:nth-of-type(4) {
+  background-color: var(--delbtn-color);
+  box-shadow: 0 5px var(--delbtn-shadow-color);
+  color: var(--char-color);
+}
+.calc .container .panel > div:nth-last-of-type(2) {
+  background-color: var(--delbtn-color);
+  box-shadow: 0 5px var(--delbtn-shadow-color);
+  color: var(--char-color);
+}
